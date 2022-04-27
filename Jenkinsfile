@@ -4,7 +4,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('git_docker_jenkins')
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
 
 	stages {
@@ -12,7 +12,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t gururajp005/nodeapp:latest .'
+				sh 'docker build -t gururajp005/nodeapp .'
 			}
 		}
 
